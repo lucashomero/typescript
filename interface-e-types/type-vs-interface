@@ -1,0 +1,37 @@
+// Comparativo entre `type` e `interface` em TypeScript
+
+// Com `interface`
+interface PessoaInterface {
+  nome: string;
+}
+
+interface FuncionarioInterface extends PessoaInterface {
+  cargo: string;
+}
+
+// Com `type`
+type PessoaType = {
+  nome: string;
+};
+
+type FuncionarioType = PessoaType & {
+  cargo: string;
+};
+
+// Tabela comparativa (em comentário):
+
+/*
+| Recurso                          | interface     | type                           |
+| -------------------------------- | ------------- | ------------------------------ |
+| Criação de tipo de objeto        | ✅ Sim        | ✅ Sim                          |
+| Herança / Extensão               | ✅ extends    | ✅ com & (interseção)          |
+| Declaração múltipla (merge)      | ✅ Sim        | ❌ Não permite redeclaração     |
+| Tipos primitivos                 | ❌ Não        | ✅ Sim (ex.: type Id = number) |
+| Unions (`|`)                     | ❌ Não        | ✅ Sim                          |
+| Tuplas, Arrays, Funções          | ❌ Limitado   | ✅ Mais flexível               |
+| Mais usado para...               | OO e objetos  | Tipos complexos e utilitários |
+*/
+
+// Quando usar cada um:
+// interface → ideal para orientação a objetos, herança e contratos
+// type → ideal para composição, funções, união de tipos, tipos primitivos, etc.
