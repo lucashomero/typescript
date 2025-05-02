@@ -1,28 +1,28 @@
 // Restringindo valores em TypeScript
 
 // Usando `type` com tipo literal
-type Status = "ativo" | "inativo" | "pendente";
+type Status = "ativo" | "inativo" | "pendente"
 
-let situacao: Status;
+let situacao: Status
 
-situacao = "ativo";      // OK
-situacao = "pendente";   // OK
-// situacao = "apagado"; // ❌ Erro: "apagado" não é permitido
+situacao = "ativo"      // OK
+situacao = "pendente"   // OK
+// situacao = "apagado" // Erro: "apagado" não é permitido
 
 // Usando `interface` com valor restrito
 interface Usuario {
-  nome: string;
-  status: "ativo" | "inativo" | "pendente";
+  nome: string
+  status: "ativo" | "inativo" | "pendente"
 }
 
 const user: Usuario = {
   nome: "Lucas",
-  status: "ativo" // ✅ permitido
-};
+  status: "ativo" // permitido
+}
 
-// ✅ Resumo:
+// Resumo:
 /*
-| Técnica                      | Como restringe                                      |
+| Técnica                        | Como restringe                                      |
 |-------------------------------|-----------------------------------------------------|
 | Tipo literal (`"valor1" | "valor2"`) | Restringe valores possíveis                   |
 | Uso em `type` e `interface`   | Controla exatamente quais valores são aceitos       |
