@@ -2,21 +2,21 @@
 
 // Com `interface`
 interface PessoaInterface {
-  nome: string;
+  nome: string
 }
 
 interface FuncionarioInterface extends PessoaInterface {
-  cargo: string;
+  cargo: string
 }
 
 // Com `type`
 type PessoaType = {
-  nome: string;
-};
+  nome: string
+}
 
 type FuncionarioType = PessoaType & {
-  cargo: string;
-};
+  cargo: string
+}
 
 // Tabela comparativa (em comentário):
 
